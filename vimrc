@@ -80,6 +80,10 @@ let python_slow_sync=1
 
 let g:syntastic_python_checkers=['flake8', 'python']
 let g:syntastic_python_flake8_args='--max-line-length=120'
+
+" Remove trailing whitespace on <leader>S
+nnoremap <leader>S :%s/\s\+$//<cr>:let @/=''<CR>
+
 "--------------------------
 " recommended settings for beginners https://github.com/scrooloose/syntastic#3-recommended-settings
 "--------------------------
