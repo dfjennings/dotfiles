@@ -29,6 +29,8 @@ Plug 'myusuf3/numbers.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/syntastic'
 Plug 'davidhalter/jedi-vim'
+Plug 'mitsuhiko/vim-python-combined'
+Plug 'mileszs/ack.vim'
 " if using in putty, be sure to install solarized for it as well
 " per https://github.com/brantb/solarized/tree/master/putty-colors-solarized
 Plug 'altercation/vim-colors-solarized'  " http://ethanschoonover.com/solarized/vim-colors-solarized
@@ -40,6 +42,12 @@ let g:numbers_exclude = ['nerdtree']
 map <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NumbersToggle<CR>    " toggles between relative and absolute numbering
 nnoremap <F4> :NumbersOnOff<CR>     " shows/hides numbers
+map <F5> :SyntasticToggleMode<CR>
+
+
+" Ack on <leader>a
+nnoremap <leader>a :Ack 
+nnoremap <leader>A :AckFromSearch<CR>
 
 syntax enable
 set background=dark
