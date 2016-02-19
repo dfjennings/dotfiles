@@ -5,6 +5,12 @@ set textwidth=100       " Line wrap (number of cols)
 set showmatch           " Highlight matching brace
 set visualbell          " Use visual bell (no beeping)
 
+" Make the command line two lines high and change the statusline display to
+" something that looks useful.
+set cmdheight=2
+set laststatus=2
+set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
+set showcmd
 "===================================
 "===================================
 " key bindings
@@ -31,6 +37,7 @@ Plug 'scrooloose/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'mitsuhiko/vim-python-combined'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
 " if using in putty, be sure to install solarized for it as well
 " per https://github.com/brantb/solarized/tree/master/putty-colors-solarized
 Plug 'altercation/vim-colors-solarized'  " http://ethanschoonover.com/solarized/vim-colors-solarized
