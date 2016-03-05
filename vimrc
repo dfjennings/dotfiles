@@ -58,6 +58,9 @@ nnoremap <leader>A :AckFromSearch<CR>
 
 syntax enable
 set background=dark
+let g:solarized_visibility =  "low"
+set t_Co=256
+let g:solarized_termcolors = 256
 colorscheme solarized
 
 "--------------------------
