@@ -21,6 +21,16 @@ let mapleader = ','
 
 
 "===================================
+" courtesy of Rob Agle to work with
+" his tmux configuration
+"===================================
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+"===================================
 "===================================
 " vim plug
 " github.com/junegunn/vim-plug
@@ -34,10 +44,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'myusuf3/numbers.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/syntastic'
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'davidhalter/jedi-vim'
 Plug 'mitsuhiko/vim-python-combined'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
 " if using in putty, be sure to install solarized for it as well
 " per https://github.com/brantb/solarized/tree/master/putty-colors-solarized
 Plug 'altercation/vim-colors-solarized'  " http://ethanschoonover.com/solarized/vim-colors-solarized
@@ -50,6 +62,7 @@ map <F2> :NERDTreeToggle<CR>
 nnoremap <F3> :NumbersToggle<CR>    " toggles between relative and absolute numbering
 nnoremap <F4> :NumbersOnOff<CR>     " shows/hides numbers
 map <F5> :SyntasticToggleMode<CR>
+nmap <F8> :TagbarToggle<CR>
 
 
 " Ack on <leader>a
