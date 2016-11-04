@@ -1,0 +1,5 @@
+set editing-mode vi
+set keymap vi-command
+
+# to show active keymappings, issue this command from *both* input mode and command mode
+# bind -p | grep -v '^#\|self-insert\|^$'
