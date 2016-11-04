@@ -11,6 +11,10 @@ set cmdheight=2
 set laststatus=2
 set statusline=[%l,%v\ %P%M]\ %f\ %r%h%w\ (%{&ff})\ %{fugitive#statusline()}
 set showcmd
+
+" enable filetype plugins and indention
+filetype plugin indent on
+
 "===================================
 "===================================
 " key bindings
@@ -50,6 +54,11 @@ Plug 'mitsuhiko/vim-python-combined'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
+Plug 'othree/html5.vim'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'lambdatoast/elm.vim'
+
 " if using in putty, be sure to install solarized for it as well
 " per https://github.com/brantb/solarized/tree/master/putty-colors-solarized
 Plug 'altercation/vim-colors-solarized'  " http://ethanschoonover.com/solarized/vim-colors-solarized
@@ -71,6 +80,9 @@ nnoremap <leader>A :AckFromSearch<CR>
 
 syntax enable
 set background=dark
+let g:solarized_visibility =  "low"
+set t_Co=256
+let g:solarized_termcolors = 256
 colorscheme solarized
 
 "--------------------------
@@ -95,12 +107,17 @@ let NERDTreeKeepTreeInNewTab=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 
 "--------------------------
+" template language support (SGML / XML too)
+"--------------------------
+autocmd FileType xml,html,htmljinja,htmldjango setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+
+"-------------------------- 
 " python support from Armin Ronacher https://github.com/mitsuhiko/dotfiles/blob/master/vim/vimrc
 "--------------------------
 "  don't highlight exceptions and builtins. I love to override them in local
 "  scopes
 autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8
-\ formatoptions=croqj softtabstop=4 textwidth=74 comments=:#\:,:#
+\ formatoptions=croq softtabstop=4 textwidth=74 comments=:#\:,:#
 let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
